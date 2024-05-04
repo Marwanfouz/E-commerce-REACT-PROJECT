@@ -30,7 +30,7 @@ function App() {
   return (
     <>
       <MobileHandlerProvider>
-      <RouterProvider router={Routing}/>
+        <RouterProvider router={Routing}/>
       </MobileHandlerProvider>
     </>
   )
