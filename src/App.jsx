@@ -7,10 +7,13 @@ import Contact from './pages/contact/Contact';
 import Cart from './pages/cart/Cart';
 import WishList from './pages/wishList/WishList';
 import { MobileHandlerProvider } from './utils/mobileHandler';
+import LoadingPage from './components/loadingPage/LoadingPage';
+import { useEffect, useState } from 'react';
 
 
 
 function App() {
+  const [isLoading, setIsLoading] = useState(false);
 
   const Routing = createBrowserRouter([
     {
@@ -27,10 +30,17 @@ function App() {
     },
   ]);
 
+  useEffect(() => {
+    setIsLoading(true);
+    setTimeout(() => {
+      setIsLoading(false);
+    }, 3000);
+  }, []);
+
   return (
     <>
       <MobileHandlerProvider>
-        <RouterProvider router={Routing}/>
+        {isLoading ? <LoadingPage /> : <RouterProvider router={Routing} />}
       </MobileHandlerProvider>
     </>
   )
