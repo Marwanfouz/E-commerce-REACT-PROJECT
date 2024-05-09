@@ -1,9 +1,9 @@
-import React from 'react'
+import BreadCrumbs from "../../components/breadCrumbs/BreadCrumbs"
 
 const About = () => {
   return (
     <div>
-      About
+      <BreadCrumbs />
     </div>
   )
 }
