@@ -9,6 +9,7 @@ import WishList from './pages/wishList/WishList';
 import { MobileHandlerProvider } from './utils/mobileHandler';
 import LoadingPage from './components/loadingPage/LoadingPage';
 import { useEffect, useState } from 'react';
+import ProductDetails from './pages/productDetails/ProductDetails';
 
 
 
@@ -26,6 +27,7 @@ function App() {
         { path: "/contact", element: <Contact /> },
         { path: "/wishList", element: <WishList /> },
         { path: "/cart", element: <Cart /> },
+        { path: "/shop/:slug", element: <ProductDetails /> },
       ],
     },
   ]);
