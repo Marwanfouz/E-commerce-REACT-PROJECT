@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Navigation, Scrollbar } from "swiper/modules";
 import { MobileHandlerContext } from "../../utils/mobileHandler";
 
-const MostSelling = () => {
+const MostSelling = ({ productData }) => {
   const { isMobile } = useContext(MobileHandlerContext);
   return (
     <section className="mostSelling">
@@ -33,30 +33,14 @@ const MostSelling = () => {
             slidesPerView: 5.3,
           },
         }}>
-        <SwiperSlide>
-          <Card />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Card />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Card />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Card />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Card />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Card />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Card />
-        </SwiperSlide>
-        <SwiperSlide>
-          <Card />
-        </SwiperSlide>
+      {productData?.data?.map(
+          (data, _id) =>
+            data?.attributes?.most_selling && (
+              <SwiperSlide key={_id}>
+                <Card productData={data?.attributes} />
+              </SwiperSlide>
+            ),
+        )}
       </Swiper>
       <div className="swiper--option">
         <div className="swiper--progress"></div>
