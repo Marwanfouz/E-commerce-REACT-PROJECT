@@ -4,6 +4,8 @@ import { axiosConfig } from "../../axios/axiosConfig";
 const initialState = {
   productData: [],
   productDetails: {},
+  allCategories: [],
+  filterCategoryItems: {},
   isLoading: false,
   erros: null,
 };
@@ -30,6 +32,29 @@ const getProductDetails = createAsyncThunk("product-details", async (slug) => {
   }
 });
 
+const getAllCategories = createAsyncThunk("all-categories", async () => {
+  try {
+    const { data } = await axiosConfig({
+      url: `categories?populate=*`,
+    });
+    return data;
+  } catch (error) {
+    return error;
+  }
+});
+
+const filterCategory = createAsyncThunk("filter-category", async (titleCategory) => {
+  try {
+    const { data } = await axiosConfig({
+      url: `categories?filters[title]=${titleCategory}&populate[products][populate][0]=image`,
+    });
+    return data;
+  } catch (error) {
+    return error;
+  }
+});
+
+
 const getAllProductSlice = createSlice({
   name: "getAllProducts",
   initialState,
@@ -37,19 +62,30 @@ const getAllProductSlice = createSlice({
     builder.addCase(getAllProducts.pending, (state, action) => {
       state.isLoading = true;
     });
+
     builder.addCase(getAllProducts.fulfilled, (state, action) => {
       state.isLoading = false;
       state.productData = action.payload;
     });
+
     builder.addCase(getAllProducts.rejected, (state, action) => {
       state.erros = action.payload;
     });
+
     builder.addCase(getProductDetails.fulfilled, (state, action) => {
       state.isLoading = false;
       state.productDetails = action.payload;
+    });
+
+    builder.addCase(getAllCategories.fulfilled, (state, action) => {
+      state.allCategories = action.payload;
+    });
+
+    builder.addCase(filterCategory.fulfilled, (state, action) => {
+      state.filterCategoryItems = action.payload;
     });
   },
 });
 const getAllProductsReducer = getAllProductSlice.reducer;
 
-export { getAllProducts, getProductDetails, getAllProductsReducer };
+export { getAllProducts, getProductDetails, getAllCategories, filterCategory, getAllProductsReducer };
