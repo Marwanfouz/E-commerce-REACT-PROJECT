@@ -1,13 +1,16 @@
 # E-commerce
 
-## Technologies
+## Front-end Technologies
 * ⚙️ Reactjs
 * ⚙️ React hooks
 * ⚙️ Sass
-* ⚙️ strapi
 * ⚙️ Typescript
 * ⚙️ ReduxToolkit
 * ⚙️ swiper
+
+## Back-end Technologies
+* ⚙️ strapi
+
 
 ## Planned Features
 ---
