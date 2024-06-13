@@ -1,3 +1,20 @@
+# E-commerce
+
+## Technologies
+* ⚙️ Reactjs
+* ⚙️ React hooks
+* ⚙️ Sass
+* ⚙️ strapi
+* ⚙️ Typescript
+* ⚙️ ReduxToolkit
+* ⚙️ swiper
+
+## Planned Features
+---
+* 💥Overview customization
+* 🎨Themes
+
+
 # React + Vite
 
 This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
