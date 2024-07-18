@@ -17,6 +17,35 @@
 * 💥Overview customization
 * 🎨Themes
 
+## Getting Started
+
+First, run the development server:
+
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+```
+
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+then run backend server of strapi
+
+```bash
+npm run develop
+# or
+yarn develop
+# or
+pnpm develop
+```
+
+
+![image](https://github.com/user-attachments/assets/eb6fc889-45af-4598-b967-8d7f26a55a48)
+![image](https://github.com/user-attachments/assets/2d4ecebf-1116-4735-9f32-2c00211f93fe)
+![image](https://github.com/user-attachments/assets/bd818dc1-60a9-42ca-a768-8cc05428bfd4)
+
+
 
 # React + Vite
 
