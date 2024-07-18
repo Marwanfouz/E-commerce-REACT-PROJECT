@@ -33,6 +33,8 @@ Open [http://localhost:3000](http://localhost:3000) with your browser to see the
 then run backend server of strapi
 
 ```bash
+cd backend
+# then
 npm run develop
 # or
 yarn develop
